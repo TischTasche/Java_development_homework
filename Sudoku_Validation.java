@@ -8,7 +8,7 @@ public class Sudoku_Validation {
         List<int[][]> sudokuPuzzles = createArrays(readInput());
 
         for (int i = 0; i < sudokuPuzzles.size(); i++) {
-            System.out.println("The given Sudoku puzzle " + (i + 1) + " is: " + (isValid(sudokuPuzzles.get(i)) ? "Valid" : "Invalid"));
+            System.out.println("Case " + (i + 1) + ": " + (isValid(sudokuPuzzles.get(i)) ? "True" : "False"));
         }
     }
 

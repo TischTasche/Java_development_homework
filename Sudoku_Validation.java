@@ -12,6 +12,11 @@ public class Sudoku_Validation {
         }
     }
 
+
+    /*
+     * This method reads all input from the console and breaks them up into separate puzzles
+     * @return a string representing the whole input separated by "\n"
+     */
     public static String readInput() {
         Scanner scanner = new Scanner(System.in);
         String input = new String();
@@ -34,6 +39,11 @@ public class Sudoku_Validation {
         return input.toString();
     }
 
+    /*
+     * This method creates a list of 2D arrays from the input
+     * @param input: a string representing the whole input separated by "\n"
+     * @return a list of 2D arrays representing the sudoku puzzles
+     */
     public static List<int[][]> createArrays(String input) {
         String[] sudokuStrings = input.split("\n\n");
         List<int[][]> sudokuPuzzles = new ArrayList<>();
@@ -61,10 +71,21 @@ public class Sudoku_Validation {
         return sudokuPuzzles;
     }
 
+
+    /*
+     * This method checks if a sudoku puzzle is valid
+     * @param sudoku: a 2D array representing the sudoku puzzle
+     * @return a boolean representing if the sudoku puzzle is valid
+     */
     public static boolean isValid(int[][] sudoku) {
         return checkRow(sudoku) && checkColumn(sudoku) && checkSubGrid(sudoku);
     }
 
+    /*
+     * This method checks if the rows of a sudoku puzzle are valid
+     * @param sudoku: a 2D array representing the sudoku puzzle
+     * @return a boolean representing if the rows of the sudoku puzzle are valid
+     */
     public static boolean checkRow(int[][] sudoku) {
         int sudokuLength = sudoku[0].length;
         for (int i = 0; i < sudokuLength; i++) {
@@ -78,6 +99,11 @@ public class Sudoku_Validation {
         return true;
     }
 
+    /*
+     * This method checks if the columns of a sudoku puzzle are valid
+     * @param sudoku: a 2D array representing the sudoku puzzle
+     * @return a boolean representing if the columns of the sudoku puzzle are valid
+     */
     public static boolean checkColumn(int[][] sudoku) {
         int sudokuLength = sudoku[0].length;
         for (int i = 0; i < sudokuLength; i++) {
@@ -91,6 +117,12 @@ public class Sudoku_Validation {
         return true;
     }
 
+
+    /*
+     * This method checks if the subgrids of a sudoku puzzle are valid
+     * @param sudoku: a 2D array representing the sudoku puzzle
+     * @return a boolean representing if the subgrids of the sudoku puzzle are valid
+     */
     public static boolean checkSubGrid(int[][] sudoku) {
         int sudokuLength = sudoku.length;
         int subGridSize = 3;
